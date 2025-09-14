@@ -180,3 +180,17 @@ docker compose up -d
 
 http://<public-ip-VM>:<port>
 ```
+
+#### Metric will be stored in following link
+
+```
+http://<public-ip-VM>:<port>/metrics
+```
+
+- if we go to Target Health, it will say what are the endpoints available
+- if the localhost is resembled in Prometheus target Helath, then it checks for the "localhost" within the container of Prometheus
+- But if the network is same for other container, then the other container can be accessed by its name
+
+#### cadvisor
+
+- The cadvisor takes all the contents of the container and gives to the Prometheus
