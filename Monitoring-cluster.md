@@ -138,3 +138,15 @@ Visit https://github.com/prometheus-operator/kube-prometheus for instructions on
 ```
 kubectl config set-context --current --namespace=monitoring
 ```
+
+Port-forwarding the svc prometheus-stack-kube-prom-prometheus service
+
+```
+kubectl port-forward svc/prometheus-stack-kube-prom-prometheus 9090:9090 -n monitoring --address=0.0.0.0 &
+```
+
+Port-forwarding the svc prometheus-stack-kube-prom-grafana service
+
+```
+kubectl port-forward svc/prometheus-stack-grafana 3000:80 -n monitoring --address=0.0.0.0 &
+```
